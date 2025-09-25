@@ -18,7 +18,7 @@ Key goals of the system:
 
 Here is the UML diagram of the system:  
 
-![UML Diagram](uml-diagram.png)  
+![UML Diagram](UML.jpeg)  
 *(Make sure to upload your UML diagram image as `uml-diagram.png` in the repo root or adjust the filename.)*  
 
 ---
