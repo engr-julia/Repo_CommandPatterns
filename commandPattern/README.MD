@@ -1,31 +1,50 @@
-## Programming Challenge
+# 🏠 Smart Home Automation (Command Pattern in Java)
 
-Design a system that uses a special remote control to send commands to different devices. The key idea is to create a way for the remote control to control multiple devices without knowing the specifics of each device. Specifically:
+---
 
-Create a remote control that can send commands like "Power On" and "Power Off."
+## 📌 Problem Overview  
+This project demonstrates a **Smart Home Automation System** implemented in **Java** using the **Command Pattern**.  
 
-Implement separate commands for "Switch On" and "Switch Off."
+The system allows a **central hub (`RemoteControl`)** to send high-level commands such as `Turn On`, `Turn Off`, or device-specific actions to various smart devices (`SmartLight`, `SmartTV`, `SmartBlinds`).  
 
-Develop a system where devices (e.g., TV, stereo, lights) can respond to these commands. Each device should have its unique behavior for turning on and off.
+Key goals of the system:  
+- Unified control for multiple devices with different functionalities.  
+- New devices can be added without modifying existing code.  
+- Central hub does not need to understand device internals—it only sends commands.  
 
-Ensure that the remote control can send these commands to any device without knowing how each device works internally.
+---
 
-Your challenge is to apply a design pattern that allows this remote control to be flexible and extensible, enabling it to control various devices effortlessly. This should be achieved without the remote control having to understand the specific details of how each device operates.
+## 📊 UML Diagram  
 
-## UML Diagram
-![alt text](https://github.com/JerryEsperanza/SoftEng1_4BSCS2/blob/master/commandPattern/commandPatternImage.png?raw=true)
+Here is the UML diagram of the system:  
 
-## Components
+![UML Diagram](uml-diagram.png)  
+*(Make sure to upload your UML diagram image as `uml-diagram.png` in the repo root or adjust the filename.)*  
 
-ViewerApp (Client): This represents an application used by viewers to control the TV. It interacts with the RemoteControl to send commands.
+---
 
-RemoteControl (Invoker): The RemoteControl acts as an invoker, receiving commands from the ViewerApp and executing them. It has a clickButton() method to invoke commands.
+## 🛠️ Design Pattern Components  
 
-Command (Interface): An interface defining the execute() method, which concrete command objects must implement. It ensures that all concrete commands have an execute() method.
+- **Command Interface (`Command`)**  
+  - Declares the `execute()` method.  
 
-PowerOn (Concrete Command): A concrete command object representing the "power on" operation for the TV. It encapsulates the switchOn() method of the Tv object.
+- **Concrete Commands (`TurnOnCommand`, `TurnOffCommand`)**  
+  - Call the appropriate action on a `Device`.  
 
-PowerOff (Concrete Command): A concrete command object representing the "power off" operation for the TV. It encapsulates the switchOff() method of the Tv object.
+- **Receiver (`SmartLight`, `SmartTV`, `SmartBlinds`)**  
+  - The actual devices that perform the actions (`turnOn()`, `turnOff()`).  
 
-Tv (Receiver): The TV object represents the device being controlled. It has switchOn() and switchOff() methods to control its power state.
+- **Invoker (`RemoteControl`)**  
+  - Executes commands without knowing device details.  
 
+- **Client (`Main`)**  
+  - Configures commands and assigns them to the `RemoteControl`.  
+
+---
+
+## 🚀 How to Run
+
+1. Clone this repository:
+   ```bash
+   git clone https://github.com/your-username/smart-home-command-pattern.git
+   cd smart-home-command-pattern/src
