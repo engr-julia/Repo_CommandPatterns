@@ -18,8 +18,7 @@ Key goals of the system:
 
 Here is the UML diagram of the system:  
 
-![UML Diagram](UML.jpeg)  
-*(Make sure to upload your UML diagram image as `uml-diagram.png` in the repo root or adjust the filename.)*  
+![UML Diagram](https://github.com/engr-julia/Repo_CommandPatterns/blob/master/commandPattern/UML%20.jpeg?raw=true)  
 
 ---
 
@@ -46,5 +45,5 @@ Here is the UML diagram of the system:
 
 1. Clone this repository:
    ```bash
-   git clone https://github.com/your-username/smart-home-command-pattern.git
-   cd smart-home-command-pattern/src
+   git clone https://github.com/engr-julia/Repo_CommandPatterns.git
+   cd Repo_CommandPatterns/src
