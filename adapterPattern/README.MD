@@ -25,6 +25,20 @@ We use the **Adapter Design Pattern**, where each device has its own adapter tha
   - `RefrigeratorAdapter` → translates `plugIn()` → `startCooling()`
   - `SmartphoneAdapter` → translates `plugIn()` → `chargePhone()`
 
+- **Client:**
+  - `Main` → demonstrates the use of adapters to connect devices to the `PowerOutlet`.
+
 ---
 
-## 📂 Class Diagram
+## 📂 UML Class Diagram
+The following UML diagram shows the relationships between the **Target**, **Adapters**, **Adaptees**, and the **Client**:
+
+![UML Diagram](AdapterPatternUML.pdf)
+
+> The diagram includes:
+> - **PowerOutlet** interface with `plugIn()`.
+> - **Adapters** (`LaptopAdapter`, `RefrigeratorAdapter`, `SmartphoneAdapter`) implementing the interface.
+> - **Adaptees** (`Laptop`, `Refrigerator`, `SmartphoneCharger`) with their specific methods.
+> - **Client (Main)** which uses the adapters through the `PowerOutlet` interface.
+
+---
