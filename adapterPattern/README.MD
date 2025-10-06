@@ -1,10 +1,30 @@
-## Remote Control for Home Appliances
+# Plugging Devices into Power Outlets
 
-You are developing an application for controlling various home appliances with a remote control. The remote control, called RemoteControlFunction, has four methods: powerOn(), powerOff(), pressPlusButton(), and pressMinusButton(). However, the home appliances you want to control, including a TV, an air conditioner, and a speaker, have different control interfaces and methods. You need to implement the Adapter Pattern to make these appliances compatible with the RemoteControlFunction without changing their core logic.
+This project demonstrates the **Adapter Design Pattern** by simulating the plugging of different devices into a standard power outlet. Since each device has unique power requirements and interfaces, adapters are created to allow them to connect safely and uniformly through a common interface.
 
-## UML Class Diagram
-![alt text](https://github.com/JerryEsperanza/SoftEng1_4BSCS2/blob/master/adapterPattern/adapterPatternImage.png?raw=true)
+---
 
+## 📌 Problem Statement
+Electronic devices such as laptops, refrigerators, and smartphones have different plug types, voltage, and amperage requirements. To ensure **compatibility** and **safety**, we need a way to standardize how these devices connect to a power outlet without modifying the device itself.
 
+---
 
+## 🎯 Solution
+We use the **Adapter Design Pattern**, where each device has its own adapter that allows it to connect to a **PowerOutlet** interface.  
 
+- **Target (Interface):**
+  - `PowerOutlet` → defines the common method `plugIn()`.
+
+- **Adaptee (Existing Objects):**
+  - `Laptop` → method: `charge()`
+  - `Refrigerator` → method: `startCooling()`
+  - `SmartphoneCharger` → method: `chargePhone()`
+
+- **Adapter (Bridge between Target & Adaptee):**
+  - `LaptopAdapter` → translates `plugIn()` → `charge()`
+  - `RefrigeratorAdapter` → translates `plugIn()` → `startCooling()`
+  - `SmartphoneAdapter` → translates `plugIn()` → `chargePhone()`
+
+---
+
+## 📂 Class Diagram
